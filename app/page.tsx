@@ -1,4 +1,6 @@
 import ExploreButton from "@/components/ExploreButton"
+import EventCard from "@/components/EventCard"
+import events from "@/lib/constants"
 
 const Page = () => {
   return (
@@ -12,7 +14,10 @@ const Page = () => {
         <h3>Featured Events</h3>
 
         <ul className="events">
-          
+          {/* Here we make an array and map it to all the events */}
+          {events.map((event) => (
+            <li className="list-none" key={event.title}> <EventCard title={event.title} image={event.image} slug={event.slug} location={event.location} date={event.date} time={event.time} /></li>
+          ))}
         </ul>
       </div>
 
